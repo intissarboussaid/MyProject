@@ -1,0 +1,105 @@
+<nav>
+    <div class=" row navbar-section" style="width: 100%; height: 100%;">
+        <div class="logo">
+            <li>
+                <button>
+                    IB
+                </button>
+            </li>
+        </div>
+        <div class="default">
+            <!-- <div class="" style="width: 100%; height: 100%;"> -->
+            <ul class="row"
+                style="width: 100%; height: 100%; display:flex;align-items:center;justify-content: flex-end;">
+
+
+                <li [class.active]="activeSection === 'header'">
+                   <a href="#header">Home</a> 
+                </li>
+                <li [class.active]="activeSection === 'skills'">
+                   <a href="#skills">Skills</a>
+                </li>
+                <li [class.active]="activeSection === 'projects'">
+                    <a href="#projects">Projects</a>
+                </li>
+                <li [class.active]="activeSection === 'contact'">
+                    <a href="#contact">Contact</a>
+                </li>
+                <!-- <li>
+                    <a href="intissar-boussaid-resume.pdf" download=""> CV</a> 
+                </li> -->
+                <li style="display: flex; ">
+                    <div class="end">
+                        <div class="row theme">
+                            @if(darkMode){
+                            <button class="right-btn" (click)="darkTheme()"><i class="fa-solid fa-star"></i></button>
+                            }@else {
+                            <button class="left-btn" (click)="darkTheme()"><i class="fa-solid fa-moon"></i></button>
+
+                            }
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="" style="width: 50px;"></div>
+            <!-- </div> -->
+        </div>
+        <div class="content drop" style="width: 95%; height: 100%;">
+            <div class="column" style="gap: 50px;">
+                <div class="bar row">
+                    @if(!OpenDrop){
+                    <div class="open" (click)="OpenDropDown()">
+                        <div class="btn"><i class="fa-solid fa-bars"></i></div>
+                    </div>
+                    }@else {
+                    <div class="close" (click)="OpenDropDown()">
+                        <div class="btn"><i class="fa-solid fa-xmark"></i></div>
+                    </div>
+                    }
+                    <div class="" style="width:30px"></div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</nav>
+@if(OpenDrop){
+
+<div class="item-drop">
+    <div class="dropdown">
+        <ul>
+
+            <li [class.active]="activeSection === 'header'">
+                   <a href="#header">Home</a> 
+                </li>
+                <li [class.active]="activeSection === 'skills'">
+                   <a href="#skills">Skills</a>
+                </li>
+                <li [class.active]="activeSection === 'projects'">
+                    <a href="#projects">Projects</a>
+                </li>
+                <li [class.active]="activeSection === 'contact'">
+                    <a href="#contact">Contact</a>
+                </li>
+            <!-- <li>
+               <a href="intissar-boussaid-resume.pdf" download=""> CV</a> 
+            </li> -->
+            <li>
+                <div class="" style="margin-left: 15px;">
+                    <div class="row theme">
+                        @if(darkMode){
+                        <button class="right-btn" (click)="darkTheme()"><i class="fa-solid fa-star"></i></button>
+                        }@else {
+                        <button class="left-btn" (click)="darkTheme()"><i class="fa-solid fa-moon"></i></button>
+                        }
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+}
